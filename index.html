@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>United Church of Norwood</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: transparent;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Blurred full-page background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('background.jpg') no-repeat center center/cover;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    header {
+      background-color: #ffffffdd;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header img.logo {
+      height: 200px;
+    }
+
+    .banner {
+      background: url('header-banner.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+      font-size: 1.8rem;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #333;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    .section {
+      display: none;
+      padding: 40px 20px;
+      max-width: 960px;
+      margin: auto;
+      background-color: #ffffffdd;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+ministries {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.ministry {
+  background: #f1f1f1;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+ staff {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.staff-member {
+  display: flex;
+  align-items: center;
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 6px;
+  gap: 20px;
+}
+
+.staff-member img {
+  width: 150px;
+  height: 200px;
+  border-radius: 5%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.staff-member h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.staff-member p {
+  margin: 0;
+  color: #555;
+}
+
+    .social-links {
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      color: #3b5998;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      margin-top: 15px;
+      border-radius: 6px;
+    }
+
+    .bottom-banner {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .bottom-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      margin-top: 0;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .banner {
+        height: 150px;
+        font-size: 1.4rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpg" alt="Church Logo" class="logo">
+    <span>
+<div class="social-links">
+      <p>Follow us on 
+        <a href="https://www.facebook.com/unitedchurchofnorwood/" target="_blank">Facebook</a>
+      </p>
+ <p>Now Live! Sunday morning at 10 AM   </p>
+
+    </div></span>
+  </header>
+
+  <div class="banner">
+  </div>
+
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('services')">Services</a>
+    <a href="#" onclick="showSection('ministries')">Ministries</a>
+    <a href="#" onclick="showSection('about')">About Us</a>
+    <a href="#" onclick="showSection('visit')">Visit Us</a>
+  </nav>
+
+  <div id="home" class="section active">
+    <h2>Welcome </h2>
+    <p>We are a Christ-centered, welcoming church family. Join us Sundays at 10 AM for worship, fellowship, and spiritual growth. Everyone is welcome here.</p>
+   
+<p> United Church of Norwood  - Founded in the late 1800s, as a Unitarian Universalist congregation, there was a merger with a local Methodist congregation creating United Church. It's had influences from Methodist, Baptist, Evangelical, and Congregational backgrounds over the years, which is why we consider ourselves inter-denominational. Our worship contains both traditional and contemporary elements that reflect our unique history.</p>
+
+
+<p>The United Church of Norwood, located in the center of Norwood Massachusetts, is now a proud partner church with the Evangelical Free Churches of America. Check them out at  <a href="https://www.efca.org" target="_blank">www.efca.org</a>
+<p>
+
+
+  </div>
+
+  <div id="services" class="section">
+    <h2>Services</h2>
+    <ul>
+      <li><strong>Sunday Worship:</strong> 10:00 AM (in-person & online)</li>     
+      <li><strong>Prayer Gatherings:</strong> Fridays at 6:30 PM</li>
+      <li><strong>Children’s Church:</strong> Sundays during worship</li>
+    </ul>
+
+ <h2>Iglesia Cristiana de Norwood </h2>
+    <ul>
+      <li><strong>Sunday Worship:</strong> Servicio de adoración los domingos a las 12 pm</li>    
+      <li><strong>Prayer Gatherings:</strong> Reunión de oración los miércoles a las 7:30 pm</li>
+
+    </ul>
+
+  </div>
+
+  <div id="ministries" class="section">
+  <h2>Our Ministries</h2>
+  <p>We believe every part of the church body has a purpose. Our ministries are active in building community, deepening faith, and serving the world with compassion.</p>
+
+  <div class="ministries">
+    <div class="ministry">
+      <h4>Outreach Ministries </h4>
+      <p>Responding to the needs of the community!</p>
+    </div>
+    <div class="ministry">
+      <h4>Worship & Music</h4>
+      <p>Creating meaningful worship experiences through music, praise, and multimedia. Open to vocalists and instrumentalists of all ages.</p>
+    </div>
+    <div class="ministry">
+      <h4>Children's Ministry</h4>
+      <p>Safe, nurturing programs for children to explore faith through stories, songs, crafts, and interactive learning during Sunday services.</p>
+    </div>
+    <div class="ministry">
+      <h4>Congregational Care Ministry</h4>
+      <p>Providing for the needs of our church community
+-Making phone callls to those who are home-bound
+-Sending cards to those in the chuech bosy to le tthem know we are thinking of them
+.</p>
+    </div>
+    <div class="ministry">
+      <h4>WISH (Women in Service to Him)</h4>
+      <p>WISH (Women in Service to Him) is a fellowship and service group open to all women in the
+church. Our mission is to be a light to the world by serving others, while nurturing our faith as
+Christian women. A variety of activities are held throughout the year, including fundraisers to
+support several Christian missions worldwide, as well to assist with local needs as they arise.
+We enjoy yearly brunches with our Spanish sisters and others, have craft activities and work
+bees, welcome guest speakers, share meaningful discussions, send cards of encouragement and
+more…all of which serve to bless our friendships and promote good will.
+Cindy Rudolph</p>
+    </div>
+    <div class="ministry">
+      <h4>Spanish ministry</h4>
+      <p>Connecting people in homes and online for prayer, accountability, and deeper study of Scripture throughout the week.</p>
+    </div>
+  </div>
+</div>
+
+  <div id="about" class="section">
+    <h2>About Us</h2>
+    <p>United Church of Norwood is a welcoming, family-oriented church dedicated to growing in faith and serving our local and global neighbors through Christ's love.</p>
+
+    <h3>Our Staff</h3>
+   <div class="staff">
+  <div class="staff-member">
+    <img src="PastorKevinSmith.jpg" alt="PastorKevinSmith">
+    <div>
+      <h4>Pastor Kevin Smith</h4>
+      <p>Soon after starting his journey as a Christian, Pastor Kevin was inspired to go into ministry because of the caring and encouraging community of believers he experienced in his church.  He has a Bachelor’s degree political science from Eastern CT State, a Master’s degree in international relations from UCONN, a Master’s degree in Church History from Gordon Conwell Theological Seminary, plus he has taken Christian Spirituality courses from various Protestant and Catholic learning institutions.  He has served at churches, a Christian High School, and with the Southern New England Walk to Emmaus team over the years. His favorite book of the Bible to preach from is Paul’s Letter to the Romans.  When he’s not busy with ministry at the church, he can be found spending time with his wife, daughters, and grandsons.  He might also be found studying Biblical Greek, or on a canoe/kayak trip out in the New England wilderness.  
+</p>
+    </div>
+  </div>
+  <div class="staff-member">
+    <img src="JannaPeterson.jpg" alt="JannaPeterson">
+    <div>
+      <h4>Janna Peterson,  Church Administrator</h4>
+      <p>Janna loves being able to see how people in the church can work together to allow different ministry areas to flourish.  She began serving on staff at United Church of Norwood just under 10 years ago and has been active in our WISH and Faith Seeds ministries.  Her favorite book on Christian living is a classic, first sold as a book of sermons back in 1896.  “In His Steps” by Charles Sheldon challenges readers not to make choices without first asking the popular question “What would Jesus do?’.   When Janna isn’t in the church office, it’s likely you’ll find her with her family, sewing, or at a local quilting shop .  
+</p>
+    </div>
+  </div>
+  <div class="staff-member">
+    <img src="SteveRudolph.jpg" alt="SteveRudolph">
+    <div>
+      <h4>Steve Rudolph, Choir Director</h4>
+      <p>As a composer, a scripture that inspires Steve is Psalm 40:3, "He put a new song in my mouth." The second part of the verse tells us that God did this so that "...many will fear and put their trust in the Lord." That is what Steve believes choir ministry is all about - using our music to point others to the Lord!  Steve holds a degree in Music Education from Eastern Nazarene College. As a professional jazz pianist, he has performed extensively both in the U. S. and in Europe. Steve is also an author of children’s sermons which are currently used in over 150 countries around the world. 
+</p>
+    </div>
+  </div>
+  <div class="staff-member">
+    <img src="RachelMcMahon.jpg" alt="RachelMcMahon">
+    <div>
+      <h4>Rachel McMahon, Praise Team Leader</h4>
+      <p>Rachel has had a passion for music and singing since she was a child.  She first started singing in the church choir here at the age of 16, and has grown into the leader for our praise team.  Her favorite praise song to lead the congregation in is “In Christ Alone”.  She is a pastry chef by trade, graduating from the International Culinary Center in New York with a certificate in Pastry Arts.  When she’s not preparing for worship or baking, she can be found spending time with her son or enjoying time with friends.  
+</p>
+    </div>
+  </div>
+  <div class="staff-member">
+    <img src="ChrisMarinuzzi.jpg" alt="ChrisMarinuzzi">
+    <div>
+      <h4>Chris Marinuzzi, Accompanist/Organist</h4>
+      <p>Chris loves being able to use his musical gifts to connect spiritually with the community.  One of his biggest inspirations was JS Bach, who wrote and performed all music, whether sacred or secular, for the glory of God.  Chris loves serving in an atmosphere where music is a tool for community and spiritual growth more than it is a spotlight for musical performance.  He has a Bachelor’s degree in music performance and Composition from the Hartt School of Music, and a Master’s in composition from Tufts University.  His favorite hymn to lead the congregation in in “The Church’s One Foundation”.  When not rehearsing at the church he can be found teaching piano lessons, working at Ogawa Coffee in Boston, and trying to fit in a good run.  
+</p>
+    </div>
+  </div>
+  <div class="staff-member">
+    <img src="ScottEagles.jpg" alt="ScottEagles">
+    <div>
+      <h4>Scott Eagles, Custodian</h4>
+      <p>Staying connected to the great community at United Church of Norwood it Scott’s greatest motivation as he invests his time into caring for our building.  He first started attending this church a number of years ago because he had heard about the exciting things his mom had to say about the church.  His favorite church memory is from his first Sunday attending the service, when he is convinced God had the sermon prepared just for him to hear that day.   When he has a chance to take time off from all of his various work duties, he loves to work on his motorcycle and take it out to enjoy our beautiful surroundings.  
+</p>
+    </div>
+  </div>
+</div>
+  </div>
+
+
+
+  <div id="visit" class="section">
+    <h2>Visit Us</h2>
+    <p><strong>Address:</strong> 595 Washington St, Norwood, MA, United States</p>
+    <p><strong>Email:</strong> unitednorwoodchurch@gmail.com</p>
+    <p><strong>Phone:</strong> (781) 762-2589</p>
+
+    <h3>Find Us on the Map</h3>
+    <iframe 
+     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.264609657037!2d-71.20727268454327!3d42.16771597918648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3b53b1a845301%3A0x8df6ded5b3b83b72!2sUnited%20Church%20of%20Norwood!5e0!3m2!1sen!2sus!4v1700000000000"
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- 🔻 Bottom Banner Image -->
+  <div class="bottom-banner">
+    <img src="bottom-banner.jpg" alt="Join Us for Worship This Sunday">
+  </div>
+
+  <footer>
+    &copy; 2025 United Church of Norwood. All rights reserved.
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
